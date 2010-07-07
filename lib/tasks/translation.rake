@@ -1,5 +1,5 @@
 namespace :refinery do
-  namespace :blog do
+  namespace :translation do
 	  desc "Install translation plugin"
  
   	task :install do
