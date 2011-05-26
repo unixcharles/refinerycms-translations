@@ -1,6 +1,7 @@
 =RefineryCMS Translations
 
-A simple approach to content translation for [RefineryCMS](http://refinerycms.org).
+A simple approach to content translation for RefineryCMS.
+Ported to Rails 3 and improved by victorcoder from seasonlab's
 
 Features:
 
@@ -62,5 +63,3 @@ Using a block:
   </div>
 
 Note: for_string and for_block both take the option "wym" argument to edit the translation with the WYM editor. for_block default to true, for_string default to false.
-
-Based on code from http://github.com/unixcharles
