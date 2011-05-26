@@ -2,11 +2,9 @@
   <h2>
     <%=t(".translating_key_from_default_to", 
           :key => @translation.name.titleize,
-          :from => RefinerySetting.i18n_translation_locales[I18n.default_locale], 
-          :to => RefinerySetting.i18n_translation_locales[@translation.locale]) %>
+          :from => Refinery::I18n.locales[Refinery::I18n.default_locale], 
+          :to => Refinery::I18n.locales[@translation.locale]) %>
   </h2>
-  <%= f.error_messages %>
-    
   <div class='field'>
     <%= f.label :untranslated, t('.untranslated') -%>
     <% if @translation.wym %>

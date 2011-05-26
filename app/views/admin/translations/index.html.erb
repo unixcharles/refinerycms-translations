@@ -15,7 +15,7 @@
     <ul id='current_locale'>
       <li>
         <% if current_locale %>
-        <%= link_to "#{RefinerySetting.i18n_translation_locales[current_locale]}
+          <%= link_to "#{Refinery::I18n::locales[current_locale]}
                       <span>#{t('.change_language')}</span>
                       <span style='display:none;'>#{t('shared.admin.form_actions.cancel')}</span>".html_safe,
                     "#",
@@ -29,9 +29,9 @@
       </li>
     </ul>
     <ul id='other_locales' style='display: none'>
-      <% (RefinerySetting.i18n_frontend_translation_locales - [RefinerySetting.i18n_translation_default_frontend_locale]).each do |locale| %>
+      <% (Refinery::I18n.locales.keys - [Refinery::I18n.default_frontend_locale]).each do |locale| %>
         <li>
-          <%= link_to RefinerySetting.i18n_translation_locales[locale],
+          <%= link_to Refinery::I18n.locales[locale],
                       params.dup.tap { |p| p[:language] = locale }, 
                       :style => "background-image: url('/images/refinery/icons/flags/#{locale}.png');" %>
         </li>
@@ -41,7 +41,7 @@
 </div>
 <div id='records'>
   <% if params[:language] %>
-    <h2><%= t('.language', :language => RefinerySetting.i18n_translation_locales[params[:language]]) %></h2>
+    <h2><%= t('.language', :language => Refinery::I18n.locales[params[:language]]) %></h2>
   <% end %>
   <% if searching? %>
     <h2><%= t('admin.search_results_for', :query => params[:search]) %></h2>
@@ -66,4 +66,3 @@
     <% end %>
   <% end %>
 </div>
-

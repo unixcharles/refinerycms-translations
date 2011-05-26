@@ -1,4 +1,7 @@
 en:
+  plugins:
+    translations:
+      title: Translations
   admin:
     translations:
       index:
