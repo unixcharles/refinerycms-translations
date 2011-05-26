@@ -15,7 +15,7 @@
     <ul id='current_locale'>
       <li>
         <% if current_locale %>
-          <%= link_to "#{Refinery::I18n::locales[current_locale]}
+          <%= link_to "#{Refinery::I18n::locales[params[:language].to_sym]}
                       <span>#{t('.change_language')}</span>
                       <span style='display:none;'>#{t('shared.admin.form_actions.cancel')}</span>".html_safe,
                     "#",
