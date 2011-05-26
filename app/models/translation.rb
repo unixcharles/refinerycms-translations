@@ -22,7 +22,7 @@ class Translation < ActiveRecord::Base
   end
 
   def self.cache_expire(name, locale, untranslated)
-    Rails.cache.read(cache_key(name, locale, untranslated), nil)
+    Rails.cache.delete(cache_key(name, locale, untranslated))
   end
 
   def self.cache_write(name, locale, untranslated, value)
