@@ -13,7 +13,9 @@ class CreateTranslations < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :translations, :id
+    add_index :translations, :name
+
+    load(Rails.root.join('db', 'seeds', 'refinerycms_translation.rb').to_s)
   end
 
   def self.down
