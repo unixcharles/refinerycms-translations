@@ -19,7 +19,7 @@ class CreateTranslations < ActiveRecord::Migration
   end
 
   def self.down
-    UserPlugin.destroy_all({:name => "Translations"})
+    UserPlugin.destroy_all({:name => "refinerycms_translations"})
     drop_table :translations
   end
 

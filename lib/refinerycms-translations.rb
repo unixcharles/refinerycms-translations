@@ -9,7 +9,9 @@ module Refinery
       
       config.after_initialize do
         Refinery::Plugin.register do |plugin|
-          plugin.name = "translations"
+          plugin.name = "refinerycms_translations"
+          plugin.url = {:controller => '/admin/translations', :action => 'index'}
+          plugin.menu_match = /^\/?(admin|refinery)\/translations/
           plugin.activity = {:class => Translations,
           :title => 'name'
         }
