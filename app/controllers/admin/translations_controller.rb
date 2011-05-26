@@ -10,6 +10,6 @@ private
       @translations = Translation
     end
 
-    @translation.order("fresh, updated_at DESC, name ASC").paginate :page => params[:page]
+    @translations.order("fresh, updated_at DESC, name ASC").paginate :page => params[:page]
   end
 end
