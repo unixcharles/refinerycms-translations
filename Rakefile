@@ -5,12 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "refinerycms-translations"
-    gem.summary = %Q{Ruby on Rails Translations engine for Refinery CMS}
-    gem.description = %Q{Ruby on Rails Translations engine for Refinery CMS rails 3 compatible}
-    gem.email = "victorcoder@gmail.com"
-    gem.homepage = "http://github.com/seasonlabs/refinerycms-translations"
-    gem.authors = ['season', 'Victor Castell']
-    gem.version = '0.3'
+    gem.summary = %Q{RefineryCMS Translations engine}
+    gem.description = %Q{Simple approach to content translation for RefineryCMS}
+    gem.email = "unixcharles@gmail.com"
+    gem.homepage = "http://github.com/unixcharles/refinerycms-translations"
+    gem.authors = ['Charles Barbier', 'season', 'Victor Castell']
+    gem.version = '0.4'
     gem.files = Dir['lib/**/*', 'config/**/*', 'app/**/*']
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
