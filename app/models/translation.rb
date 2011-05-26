@@ -44,7 +44,7 @@ class Translation < ActiveRecord::Base
 
       if translation = self.cache_read(name,locale,untranslated)
         return translation
-      end if RefinerySetting.find_or_set(:i18n_frontend_cache_translation, true, {:scoping => 'refinery'})
+      end if use_cache?
 
       if ( translation = self.find(:first, :conditions => {:name => name.to_s, :locale => locale.to_s}) ).nil?
         (Refinery::I18n.locales.keys - [Refinery::I18n.default_frontend_locale]).each do |current_locale|
@@ -66,8 +66,13 @@ class Translation < ActiveRecord::Base
         end
       end
 
-      self.cache_write(name, locale, untranslated, translation.value) if RefinerySetting.find_or_set(:i18n_frontend_cache_translation, true, {:scoping => 'refinery'})
+      self.cache_write(name, locale, untranslated, translation.value) if use_cache?
       translation.value
     end
+
+    def use_cache?
+      @use_cache ||= RefinerySetting.find_or_set(:i18n_frontend_cache_translation, true, {:scoping => 'refinery'})
+    end
+
   end
 end
